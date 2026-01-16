@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인생 시간표 (Life Clock)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>인생 시간표</h1>
+            <p class="subtitle">당신의 인생은 지금 몇 시일까요?</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <label for="ageInput">현재 나이</label>
+                <div class="input-wrapper">
+                    <input type="number" id="ageInput" placeholder="나이를 입력하세요" min="0" max="100" step="1">
+                    <span class="unit">세</span>
+                </div>
+            </div>
+
+            <div class="clock-display" id="clockDisplay">
+                <div class="time" id="timeText">--:--</div>
+                <div class="period" id="periodText">안녕!</div>
+            </div>
+
+            <div class="message-card">
+                <p id="messageText">나이를 입력하면 당신의 시간이 보입니다.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© Life Clock</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

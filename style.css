@@ -1,0 +1,170 @@
+:root {
+    --bg-morning: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    --bg-day: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    --bg-evening: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --bg-night: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    
+    --text-color: #333;
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    background: var(--bg-day); 
+    /* Default background, will be controlled by JS */
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    transition: background-image 1s ease-in-out;
+}
+
+/* Fallback/Initial Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3rem;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* Input Section */
+.input-section {
+    margin-bottom: 2.5rem;
+}
+
+.input-section label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="number"] {
+    width: 120px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-weight: 700;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+input[type="number"]:focus {
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+    transform: scale(1.02);
+}
+
+.unit {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Clock Display */
+.clock-display {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.time {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -2px;
+}
+
+.period {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+/* Message Card */
+.message-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#messageText {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    word-break: keep-all;
+}
+
+footer {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem 1.5rem;
+        width: 85%;
+    }
+    
+    .time {
+        font-size: 3.5rem;
+    }
+}
